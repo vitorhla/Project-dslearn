@@ -14,7 +14,7 @@ public class Task extends Lesson {
 	private String description;
 	private Integer questionCount;
 	private Integer approvalCount;
-	private Double wight;
+	private Double weight;
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant dueDate;
@@ -24,12 +24,12 @@ public class Task extends Lesson {
 	}
 
 	public Task(Long id, String title, Integer position, Section section, String description, Integer questionCount,
-			Integer approvalCount, Double wight, Instant dueDate) {
+			Integer approvalCount, Double weight, Instant dueDate) {
 		super(id, title, position, section);
 		this.description = description;
 		this.questionCount = questionCount;
 		this.approvalCount = approvalCount;
-		this.wight = wight;
+		this.weight = weight;
 		this.dueDate = dueDate;
 	}
 
@@ -57,12 +57,12 @@ public class Task extends Lesson {
 		this.approvalCount = approvalCount;
 	}
 
-	public Double getWight() {
-		return wight;
+	public Double getWeight() {
+		return weight;
 	}
 
-	public void setWight(Double wight) {
-		this.wight = wight;
+	public void setWeight(Double weight) {
+		this.weight = weight;
 	}
 
 	public Instant getDueDate() {

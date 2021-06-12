@@ -26,7 +26,22 @@ INSERT INTO tb_section (title, description, position, img_Uri,resource_id, prere
 INSERT INTO tb_section (title, description, position, img_Uri,resource_id, prerequisite_id) VALUES ('Capitulo 2','Neste capitulo vamos continuar', 2,'https://prod-discovery.edx-cdn.org/media/course/image/0e575a39-da1e-4e33-bb3b-e96cc6ffc58e-8372a9a276c1.png',1,1);
 INSERT INTO tb_section (title, description, position, img_Uri,resource_id, prerequisite_id) VALUES ('Capitulo 3','Neste capitulo vamos finalizar', 3,'https://prod-discovery.edx-cdn.org/media/course/image/0e575a39-da1e-4e33-bb3b-e96cc6ffc58e-8372a9a276c1.png',1,2);
 
-
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update) VALUES (1,1,TIMESTAMP WITH TIME ZONE '2020-11-20T13:00:00Z',null,true,false);
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update) VALUES (2,1,TIMESTAMP WITH TIME ZONE '2020-11-20T13:00:00Z',null,true,false);
+
+INSERT INTO tb_lesson (title, position,section_id) VALUES ('Aula 1 capitulo 1',1,1);
+INSERT INTO tb_content (id, text_Content, video_Uri) VALUES (1,'Material de apoio: abc','https://www.youtube.com/watch?v=Z-XmayVcGN4');
+
+INSERT INTO tb_lesson (title, position,section_id) VALUES ('Aula 2 capitulo 1',2,1);
+INSERT INTO tb_content (id, text_Content, video_Uri) VALUES (2,' ','https://www.youtube.com/watch?v=Z-XmayVcGN4');
+
+INSERT INTO tb_lesson (title, position,section_id) VALUES ('Aula 3 capitulo 1',3,1);
+INSERT INTO tb_content (id, text_Content, video_Uri) VALUES (3,' ','https://www.youtube.com/watch?v=Z-XmayVcGN4');
+
+INSERT INTO tb_lesson (title, position,section_id) VALUES ('Tarefa do capitulo 1',4,1);
+INSERT INTO tb_task (id, description, question_Count, approval_Count, weight, due_Date) VALUES (4,'Fazer um trabalho legal', 5, 4, 1.0,TIMESTAMP WITH TIME ZONE '2021-11-25T13:00:00Z');
+
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (1, 1, 1);
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (2, 1, 1);
+
 
