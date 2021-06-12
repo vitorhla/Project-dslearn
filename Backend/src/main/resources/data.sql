@@ -22,6 +22,9 @@ INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) 
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Forum','Tire suas duvidas', 2,'https://prod-discovery.edx-cdn.org/media/course/image/0e575a39-da1e-4e33-bb3b-e96cc6ffc58e-8372a9a276c1.png', 2,1);
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Lives ','Lives exclusivas para a turma ', 3,'https://prod-discovery.edx-cdn.org/media/course/image/0e575a39-da1e-4e33-bb3b-e96cc6ffc58e-8372a9a276c1.png', 0,1);
 
+INSERT INTO tb_section (title, description, position, img_Uri,resource_id, prerequisite_id) VALUES ('Capitulo 1','Neste capitulo vamos começar', 1,'https://prod-discovery.edx-cdn.org/media/course/image/0e575a39-da1e-4e33-bb3b-e96cc6ffc58e-8372a9a276c1.png',1,null);
+INSERT INTO tb_section (title, description, position, img_Uri,resource_id, prerequisite_id) VALUES ('Capitulo 2','Neste capitulo vamos continuar', 2,'https://prod-discovery.edx-cdn.org/media/course/image/0e575a39-da1e-4e33-bb3b-e96cc6ffc58e-8372a9a276c1.png',1,1);
+INSERT INTO tb_section (title, description, position, img_Uri,resource_id, prerequisite_id) VALUES ('Capitulo 3','Neste capitulo vamos finalizar', 3,'https://prod-discovery.edx-cdn.org/media/course/image/0e575a39-da1e-4e33-bb3b-e96cc6ffc58e-8372a9a276c1.png',1,2);
 
 
 
