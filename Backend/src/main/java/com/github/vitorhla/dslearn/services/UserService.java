@@ -24,8 +24,14 @@ public class UserService implements UserDetailsService {
 	@Autowired
 	private UserRepository repository;
 	
+	@Autowired
+	private AuthService autheService;
+	
 	@Transactional(readOnly = true)
 	public UserDTO findById(Long id) {
+		
+		autheService.validateSelfOrAdmin(id);
+		
 		Optional<User>  obj = repository.findById(id);
 		User entity = obj.orElseThrow(() -> new ControllerNotFoundException("Entity not found"));
 		return new UserDTO(entity);
@@ -43,5 +49,9 @@ public class UserService implements UserDetailsService {
 		logger.info("User found: "+username);
 		return user;
 	}
+	
+	
+	
+	
 	
 }

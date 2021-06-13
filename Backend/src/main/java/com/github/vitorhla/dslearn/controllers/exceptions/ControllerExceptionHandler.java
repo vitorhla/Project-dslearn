@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.github.vitorhla.dslearn.services.exceptions.ControllerNotFoundException;
 import com.github.vitorhla.dslearn.services.exceptions.DatabaseException;
+import com.github.vitorhla.dslearn.services.exceptions.ForbiddenException;
+import com.github.vitorhla.dslearn.services.exceptions.UnauthorizedException;
 
 @ControllerAdvice
 public class ControllerExceptionHandler {
@@ -56,14 +58,28 @@ public class ControllerExceptionHandler {
 		err.setPath(request.getRequestURI());
 		
 		for (FieldError f : e.getBindingResult().getFieldErrors()) {
-			err.addError(f.getField(), f.getDefaultMessage());
-			
-			
+			err.addError(f.getField(), f.getDefaultMessage());	
 			
 		}
 		
 		return ResponseEntity.status(status).body(err);
 		
 	}
+	
+	
+	@ExceptionHandler(ForbiddenException.class)
+	public ResponseEntity<OAuthCustomError> forbidden(ForbiddenException e, HttpServletRequest request){
+			OAuthCustomError err = new OAuthCustomError("Forbidden", e.getMessage());
+		return ResponseEntity.status(HttpStatus.FORBIDDEN).body(err);
+		
+	}
+	
+	@ExceptionHandler(UnauthorizedException.class)
+	public ResponseEntity<OAuthCustomError> unauthorid(UnauthorizedException e, HttpServletRequest request){
+			OAuthCustomError err = new OAuthCustomError("Unauthorized", e.getMessage());
+		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(err);
+		
+	}
+
 
 }
